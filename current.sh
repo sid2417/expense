@@ -1,9 +1,11 @@
 #!/bin/bash
 
-echo "This is my current Team"
+VARIABLE=CURRENT
+
+echo "This is my current Team $VARIABLE"
 
 echo "This is my current process Id : $$"
 
-ehco "This is Other Team"
+echo "This is Other Team $VARIABLE"
 
 echo "This is my current process Id : $$"
