@@ -9,10 +9,17 @@
 # And specify the extension file type
 # And finally you loops and delete the records one by one
 
-FOLDERNAME=/tmp/logfilesss
+FOLDERNAME=/tmp/logfiles
 if [ -d $FOLDERNAME ]
 then
     echo "Your Directory is Exist"
 else
     echo "Not available your directory, plese make sure that..."
+    exit 1
 fi
+
+# FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
+
+FILES=$(find $FOLDERNAME -name "*.log" -time +14)
+
+echo $FILES
