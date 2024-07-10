@@ -26,6 +26,6 @@ echo $FILES
 
 while IFS= read -r line
 do 
-    echo $line date
+    echo $line -mtime
     #rm -rf $line
 done <<<$FILES
