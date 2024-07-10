@@ -26,6 +26,6 @@ echo $FILES
 
 while IFS= read -r line
 do 
-    echo $line -mtime
-    #rm -rf $line
+    echo "Deleting these files : $line"
+    rm -rf $line
 done <<<$FILES
