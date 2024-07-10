@@ -26,5 +26,6 @@ echo $FILES
 
 while IFS= read -r line
 do 
-    ehco $line
+    echo $line
+    #rm -rf $line
 done <<<$FILES
