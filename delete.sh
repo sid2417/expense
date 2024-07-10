@@ -20,6 +20,6 @@ fi
 
 # FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
-FILES=$(find $FOLDERNAME -name "*.log" -time +14)
+FILES=$(find $FOLDERNAME -name "*.log" -mtime +14)
 
 echo $FILES
