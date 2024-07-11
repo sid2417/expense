@@ -9,7 +9,7 @@
 # And specify the extension file type
 # And finally you loops and delete the records one by one
 
-FOLDERNAME=/tmp/logfiles
+FOLDERNAME=/tmp/logfiles/
 if [ -d $FOLDERNAME ]
 then
     echo "Your Directory is Exist"
