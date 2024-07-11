@@ -26,8 +26,8 @@
 # /dev/xvda3                   xfs       424M  223M  202M  53% /boot
 
 
-DISC_USAGE=$(df -hT | grep tmpfs)
-THRESHOLD_LIMIT=0
+DISC_USAGE=$(df -hT | grep xfs)
+THRESHOLD_LIMIT=10 
 MESSAGE=""
 
 while IFS= read -r line
