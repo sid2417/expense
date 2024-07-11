@@ -41,9 +41,9 @@ do
 
 done <<<$DISC_USAGE 
 
-echo -e "Message : $MESSAGE"
+echo -e "Message : $MESSAGE \n"
 
-echo "$MESSAGE" | mail -s "Disc Usage Alert..." siddhartha.java9398@gmail.com \n
+echo -e "$MESSAGE \n" | mail -s "Disc Usage Alert..." siddhartha.java9398@gmail.com 
 #echo "$MESSAGE" | mail -s "Disk Usage Alert" info@joindevops.com
 
 # echo "body" | mail -s "subject" to-address
