@@ -36,12 +36,12 @@ do
     DISC_THRESHOLD_VALUE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
     if [ $DISC_THRESHOLD_VALUE -ge $THRESHOLD_LIMIT ]
     then
-        MESSAGE+="$FOLDER exceeded the threshold limit is $THRESHOLD_LIMIT , your current disc usage is : $DISC_THRESHOLD_VALUE "
+        MESSAGE+="$FOLDER exceeded the threshold limit is $THRESHOLD_LIMIT , your current disc usage is : $DISC_THRESHOLD_VALUE \n"
     fi
 
 done <<<$DISC_USAGE 
 
-echo -e "Message : $MESSAGE \n"
+echo -e "Message : $MESSAGE "
 
 echo -e "$MESSAGE \n" | mail -s "Disc Usage Alert..." siddhartha.java9398@gmail.com 
 #echo "$MESSAGE" | mail -s "Disk Usage Alert" info@joindevops.com
