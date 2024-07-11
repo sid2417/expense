@@ -36,7 +36,7 @@ do
     DISC_THRESHOLD_VALUE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
     if [ $DISC_THRESHOLD_VALUE -ge $THRESHOLD_LIMIT ]
     then
-        MESSAGE+="$FOLDER exceeded the threshold limit is $THRESHOLD_LIMIT , your current disc usage is : $DISC_THRESHOLD_VALUE \n"
+        MESSAGE+="$FOLDER exceeded the threshold limit is $THRESHOLD_LIMIT , your current disc usage is : $DISC_THRESHOLD_VALUE "
     fi
 
 done <<<$DISC_USAGE 
