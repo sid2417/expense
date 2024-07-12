@@ -23,7 +23,7 @@ while IFS= read -r line
 do
     FOLDER=$($line | awk -F " " '{print $NF}')
     CURRENT_THRESHOLD=$($line| awk -F " " '{print $6F}' | cut -d "%" -f1)
-    if [ $CURRENT_THRESHOLD -ge $LIMIT  ]
+    if [ $CURRENT_THRESHOLD -ge $LIMIT ]
     then
         MESSAGE+="Currently your disc  $FOLDER $CURRENT_THRESHOLD exceeds the threshold limit $LIMIT "
     fi
