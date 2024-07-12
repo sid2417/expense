@@ -14,7 +14,7 @@
 #df -hT | grep xfs |
 #/dev/xvda1     xfs        10G  1.8G  8.3G  18% /
 DISC_DETAILS=$(df -hT | grep xfs)
-LIMIT=0
+LIMIT=60
 MESSAGE=""
 FOLDER=$(df -hT | grep xfs | awk -F " " '{print $NF}')
 CURRENT_THRESHOLD=$(df -hT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
