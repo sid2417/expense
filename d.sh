@@ -18,7 +18,7 @@ LIMIT=0
 MESSAGE=""
 
 
-echo "$FOLDER... $CURRENT_THRESHOLD"
+#echo "$FOLDER... $CURRENT_THRESHOLD"
 while IFS= read -r line
 do
     FOLDER=$($line | awk -F " " '{print $NF}')
