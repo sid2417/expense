@@ -8,7 +8,7 @@
 # /dev/mapper/RootVG-auditVol  xfs       4.4G   64M  4.3G   2% /var/log/audit
 # /dev/xvda3                   xfs       424M  223M  202M  53% /boot
 DISC_DETAILS=$(df -hT | grep xfs)
-LIMIT=10
+LIMIT=0
 MESSAGE=""
 
 FOLDER=$($DISC_DETAILS | awk -F " " '{print $NF}')
