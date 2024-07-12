@@ -7,18 +7,22 @@
 # /dev/mapper/RootVG-varTmpVol xfs       2.0G   47M  1.9G   3% /var/tmp
 # /dev/mapper/RootVG-auditVol  xfs       4.4G   64M  4.3G   2% /var/log/audit
 # /dev/xvda3                   xfs       424M  223M  202M  53% /boot
-DISC_USAGE=$(du -hT | grep xfs)
+DISC_DETAILS=$(df -hT | grep xfs)
 LIMIT=10
+MESSAGE=""
 
-
-FOLDER=$($DISC_USAGE | awk -F " " '{print $NF}')
-CURRENT_THRESHOLD=$($DISC_USAGE | awk -F " " '{print $NF}' | cut -d "%" -f1)
+FOLDER=$($DISC_DETAILS | awk -F " " '{print $NF}')
+CURRENT_THRESHOLD=$($DISC_DETAILS | awk -F " " '{print $6F}' | cut -d "%" -f1)
 
 while IFS= read -r line
 do
     if [ $CURRENT_THRESHOLD -ge $LIMIT  ]
     then
-        echo 
+        MESSAGE+="Currently your disc  $FOLDER $CURRENT_THRESHOLD exceeds the threshold limit $LIMIT "
     fi
 
-done <<< $DISC_USAGE
+done <<< $DISC_DETAILS
+echo "Please Alert : $MESSAGE"
+
+# df -hT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1
+# df -hT | grep xfs | awk -F " " '{print $NF}'
