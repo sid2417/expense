@@ -11,8 +11,13 @@ DISC_DETAILS=$(df -hT | grep xfs)
 LIMIT=0
 MESSAGE=""
 
-FOLDER="$($DISC_DETAILS | awk -F " " '{print $NF}')"
-CURRENT_THRESHOLD=$($DISC_DETAILS | awk -F " " '{print $6F}' | cut -d "%" -f1)
+# FOLDER=$($DISC_DETAILS | awk -F " " '{print $NF}')
+# CURRENT_THRESHOLD=$($DISC_DETAILS | awk -F " " '{print $6F}' | cut -d "%" -f1)
+df -hT | grep xfs |
+
+FOLDER=$(df -hT | grep xfs | awk -F " " '{print $NF}')
+CURRENT_THRESHOLD=$(df -hT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
+
 echo "$FOLDER... $CURRENT_THRESHOLD"
 while IFS= read -r line
 do
