@@ -13,7 +13,7 @@ MESSAGE=""
 
 FOLDER=$($DISC_DETAILS | awk -F " " '{print $NF}')
 CURRENT_THRESHOLD=$($DISC_DETAILS | awk -F " " '{print $6F}' | cut -d "%" -f1)
-
+echo "$FOLDER... $CURRENT_THRESHOLD"
 while IFS= read -r line
 do
     if [ $CURRENT_THRESHOLD -ge $LIMIT  ]
@@ -22,6 +22,7 @@ do
     fi
 
 done <<< $DISC_DETAILS
+
 echo "Please Alert : $MESSAGE"
 
 # df -hT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1
