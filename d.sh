@@ -7,14 +7,15 @@
 # /dev/mapper/RootVG-varTmpVol xfs       2.0G   47M  1.9G   3% /var/tmp
 # /dev/mapper/RootVG-auditVol  xfs       4.4G   64M  4.3G   2% /var/log/audit
 # /dev/xvda3                   xfs       424M  223M  202M  53% /boot
-DISC_DETAILS=$(df -hT | grep xfs)
-LIMIT=0
-MESSAGE=""
+
 
 # FOLDER=$($DISC_DETAILS | awk -F " " '{print $NF}')
 # CURRENT_THRESHOLD=$($DISC_DETAILS | awk -F " " '{print $6F}' | cut -d "%" -f1)
-df -hT | grep xfs |
-
+#df -hT | grep xfs |
+#/dev/xvda1     xfs        10G  1.8G  8.3G  18% /
+DISC_DETAILS=$(df -hT | grep xfs)
+LIMIT=0
+MESSAGE=""
 FOLDER=$(df -hT | grep xfs | awk -F " " '{print $NF}')
 CURRENT_THRESHOLD=$(df -hT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
 
