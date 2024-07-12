@@ -45,5 +45,13 @@ echo -e "Message : $MESSAGE "
 
 echo -e "$MESSAGE \n" | mail -s "Disc Usage Alert..." siddhartha.java9398@gmail.com 
 #echo "$MESSAGE" | mail -s "Disk Usage Alert" info@joindevops.com
-
 # echo "body" | mail -s "subject" to-address
+# siddhartha.java9398@gmail.com ---> This mail address is nth but to address
+
+#vim /etc/postfix/sasl_passwd
+#[smtp.gmail.com]:587 xyz:AppPassword
+
+# here xyz is Gmail of from address
+# Here AppPassword is 2 step verificaiton password of from address gamil
+
+#Finally 2-step verification is required for from address only
