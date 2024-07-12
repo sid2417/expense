@@ -13,7 +13,7 @@
 # CURRENT_THRESHOLD=$($DISC_DETAILS | awk -F " " '{print $6F}' | cut -d "%" -f1)
 #df -hT | grep xfs |
 #/dev/xvda1     xfs        10G  1.8G  8.3G  18% /
-DISC_DETAILS=$(df -hT | grep tmpfs)
+DISC_DETAILS=$(df -hT | grep xfs)
 LIMIT=0
 MESSAGE=""
 
