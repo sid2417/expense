@@ -31,7 +31,7 @@ do
 
 done <<< $DISC_DETAILS
 
-echo "Please Alert : $MESSAGE"
+echo -e "Please Alert : $MESSAGE"
 
 # df -hT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1
 # df -hT | grep xfs | awk -F " " '{print $NF}'
